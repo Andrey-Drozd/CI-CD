@@ -7,7 +7,7 @@ import React from 'react'
 import CatImg from './images/cat.jpg'
 
 function Component1() {
-  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 101]
   const arrReverse = reverse(arr)
   // eslint-disable-next-line no-console
   console.log(arrReverse)
