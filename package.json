@@ -11,13 +11,14 @@
   "scripts": {
     "start": "cross-env webpack serve --config config/webpack/webpack.config.js",
     "dev": "cross-env webpack --config config/webpack/webpack.config.js",
-    "build": "npm run lint && npm run lint:styles && npm run ts:check && cross-env NODE_ENV=production webpack --config config/webpack/webpack.config.js",
+    "build": "npm run all-checks && cross-env NODE_ENV=production webpack --config config/webpack/webpack.config.js",
     "bundle:analyzer": "cross-env NODE_ENV=production BUNDLE_ANALYZER=true webpack --config config/webpack/webpack.config.js",
     "ts:check": "tsc",
     "lint": "eslint --config .eslintrc.json .",
     "lint:fix": "eslint --config .eslintrc.json . --fix",
     "lint:styles": "stylelint src/**/*.scss",
-    "lint:styles:fix": "stylelint src/**/*.scss --fix"
+    "lint:styles:fix": "stylelint src/**/*.scss --fix",
+    "all-checks": "npm run ts:check && npm run lint && npm run lint:styles"
   },
   "dependencies": {
     "core-js": "^3.22.4",

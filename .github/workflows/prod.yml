@@ -4,7 +4,7 @@ on:
     branches:
       - main
 jobs:
-  init:
+  ts:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -24,9 +24,43 @@ jobs:
 
       - name: check ts
         run: npm run ts:check
+  lint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version : [ 16.15.1 ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Starting Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: node version
+        run: node -v
+
+      - name: install modules
+        run: npm install
 
       - name: check lint
         run: npm run lint
+  lint_styles:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 16.15.1 ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Starting Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: node version
+        run: node -v
+
+      - name: install modules
+        run: npm install
 
       - name: ckeck lint:styles
         run: npm run lint:styles
