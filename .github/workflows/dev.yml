@@ -2,7 +2,8 @@ name: CI-dev
 on:
   push:
     branches:
-      - !master
+      - !main
+      - 'future/**'
 jobs:
   init:
     runs-on: ubuntu-latest
