@@ -1,20 +1,31 @@
-/* eslint-disable max-len */
 import './Component1.scss'
 
 import reverse from 'lodash/reverse'
-import React from 'react'
+import React, { useState } from 'react'
 
 import CatImg from './images/cat.jpg'
 
-function Component1() {
+function Component1(): number {
+  const [state, setState] = useState(0)
   const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
   const arrReverse = reverse(arr)
+
+  const increment = () => setState((prev) => prev + 1)
+
   // eslint-disable-next-line no-console
   console.log(arrReverse)
+
+  /* eslint-disable max-len */
   return (
     <>
       <div className="block1">
         <span>Component - 1!</span>
+
+        <h1>value = {state}</h1>
+
+        <button type="button" onClick={increment}>
+          increment
+        </button>
 
         <span>{arrReverse}</span>
 
