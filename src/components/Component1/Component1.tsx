@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 
 import CatImg from './images/cat.jpg'
 
-function Component1() {
+function Component1(): number {
   const [state, setState] = useState(0)
   const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
   const arrReverse = reverse(arr)
