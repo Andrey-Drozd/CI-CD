@@ -11,6 +11,7 @@ function Component1() {
   const arrReverse = reverse(arr)
 
   const increment = () => setState((prev) => prev + 1)
+  const decrement = () => setState((prev) => prev - 1)
 
   // eslint-disable-next-line no-console
   console.log(arrReverse)
@@ -25,6 +26,9 @@ function Component1() {
 
         <button type="button" onClick={increment}>
           increment
+        </button>
+        <button type="button" onClick={decrement}>
+          decrement
         </button>
 
         <span>{arrReverse}</span>
